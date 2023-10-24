@@ -1,0 +1,398 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-variant: small-caps;
+    color: #60C3DB;
+    font-family: 'open sans';
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    grid-area: header;
+}
+
+.about {
+    grid-area: about;
+}
+
+.gallery {
+    grid-area: gallery;
+}
+
+.service {
+    grid-area: service;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.container {
+    min-width: 380px;
+    max-width: 1920px;
+    width: 100%;
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat (5, 1fr);
+    grid-template-areas: "header header header header" "about about about about" "gallery gallery gallery gallery" "service service service service" "footer footer footer footer";
+}
+
+/* Header */
+
+.nav {
+    grid-area: nav;
+}
+
+.header-text {
+    grid-area: header-text;
+}
+
+.header {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat (4, 1fr);
+    grid-template-rows: repeat (2, 1fr);
+    grid-template-areas: "nav nav nav nav" "header-text header-text header-text header-text";
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to right, rgba(97, 195, 219, 0.3), rgba(97, 195, 219, 0.1)), url(../image/portada.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header-text {
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 200px;
+}
+
+.header-text__h1 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.header-text__h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Nav */
+
+.nav {
+    display: flex;
+    justify-content: center;
+    background: rgba(206, 222, 226, 0.7);
+    height: 30px;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+}
+
+.nav__link {
+    display: block;
+    text-align: center;
+    color: rgb(36, 32, 32);
+    text-decoration: none;
+    padding: 0.25em;
+    margin: 0.2em;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: 0.8rem;
+}
+
+.nav__link:hover {
+    text-decoration: underline;
+}
+
+/* About*/
+
+.about {
+    padding-top: 30px;
+}
+
+.about__title,
+.gallery__title,
+.service__title {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.about__container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.about__image {
+    display: none;
+}
+
+.about-texts {
+    width: 90%;
+}
+
+.about-texts__header {
+    margin-bottom: 15px;
+}
+
+.about-texts__span {
+    display: inline-block;
+    background: #60C3DB;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.about-texts__text {
+    padding: 0px 0px 10px 15px;
+    font-weight: 300;
+    text-align: justify;
+}
+
+/* Gallery */
+
+.gallery {
+    background: #f2f2f2;
+    display: none;
+    padding-bottom: 2rem;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.images__container {
+    width: 22%;
+    margin: 0.3rem;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.images__img {
+    width: 100%;
+    height: 100%;
+}
+
+.images__box-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: hsla(192, 63%, 62%, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    transition: transform .8s;
+}
+
+.images__container:hover .images__box-hover {
+    transform: scale(1);
+}
+
+/*  Services */
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.service__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service__one-service {
+    width: 90%;
+    text-align: center;
+}
+
+.service__img {
+    width: 90%;
+}
+
+.service__text {
+    font-weight: bold;
+    ;
+    text-align: center
+}
+
+/* footer */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #414141;
+    padding: 30px 0 20px 0;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 20px auto;
+}
+
+.footer__social {
+    display: flex;
+    justify-content: center;
+    padding-right: 2rem;
+}
+
+.footer__img {
+    padding-right: 0.5rem;
+}
+
+.footer__footer {
+    font-size: 1rem;
+    margin: 20px 20px 0 0;
+    color: #9e9797;
+}
+
+@media (min-width: 480px) {
+    .nav {
+        justify-content: end;
+    }
+
+}
+
+@media (min-width:768px) {
+    .header {
+        height: 500px;
+    }
+
+    .about__image {
+        display: block;
+        width: 25%;
+        height: auto;
+        justify-content: center;
+
+    }
+
+    .gallery {
+        display: block;
+    }
+
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between
+    }
+
+    .header-text__h1,
+    .header-text__h2 {
+        font-size: 1.5rem;
+    }
+
+    .about__title,
+    .gallery__title,
+    .service__title {
+        font-size: 1.3rem;
+    }
+
+    .service__text,
+    .about-texts__text {
+        font-size: 1.3rem;
+
+    }
+}
+
+
+@media (min-width:1024px) {
+    .header {
+        height: 650px;
+    }
+
+    .service__text,
+    .about-texts__text {
+        font-size: 1.6rem;
+
+    }
+
+    .service__container {
+        flex-direction: row;
+    }
+
+    .footer {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+    }
+
+    .footer__footer {
+        color: green;
+    }
+}
+
+@media (min-width:1200px) {
+    .header {
+        height: 800px;
+        display: flex;
+    }
+
+    .nav {
+        height: 800px;
+        width: 300px;
+        justify-content: center;
+
+    }
+
+    .nav__list {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .nav__link {
+        font-size: 1rem;
+        color: aquamarine
+    }
+
+    .header-text {
+
+        width: 100%;
+        height: auto;
+        justify-content: start;
+
+    }
+
+    .header-text__h1,
+    .header-text__h2 {
+        color: aquamarine
+    }
+
+    .about__title,
+    .about-texts__span,
+    .about-texts__text,
+    .about-texts__header {
+        color: purple;
+
+    }
+
+}
